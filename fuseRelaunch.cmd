@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_isim_beh.exe" -prj "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_beh.prj" "work.test_tb" 

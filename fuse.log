@@ -1,0 +1,46 @@
+Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_isim_beh.exe -prj D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_beh.prj work.test_tb 
+ISim P.58f (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/th_multiplexer.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_registers.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_prog_counter.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_other_mem.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_mem_of_data.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_control_unit.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/the_and.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/t.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/g.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/ALU_control.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/ALU.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/adder_4.vhd" into library work
+Parsing VHDL file "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/yu.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture arc_pc of entity PC [pc_default]
+Compiling architecture memory1 of entity memory [memory_default]
+Compiling architecture arc_adder4 of entity adder4 [\adder4(32)\]
+Compiling architecture arc_shiftleftby2 of entity shiftleftby2 [\shiftleftby2(26,28)\]
+Compiling architecture arc_controller of entity controller [controller_default]
+Compiling architecture arc_multiplexer of entity multiplexer [\multiplexer(32)\]
+Compiling architecture arc_signextend of entity signExtend [\signExtend(16,32)\]
+Compiling architecture arc_shiftleftby2 of entity shiftleftby2 [\shiftleftby2(32,32)\]
+Compiling architecture arc_alu of entity ALU [\ALU(32)\]
+Compiling architecture arc_multiplexer of entity multiplexer [\multiplexer(5)\]
+Compiling architecture arc_registers of entity registers [registers_default]
+Compiling architecture arc_alucontroller of entity ALUController [alucontroller_default]
+Compiling architecture arc_and_port of entity and_port [and_port_default]
+Compiling architecture arc_datamemory of entity datamemory [datamemory_default]
+Compiling architecture behavior of entity test_tb
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 34 VHDL Units
+Built simulation executable D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_isim_beh.exe
+Fuse Memory Usage: 38040 KB
+Fuse CPU Usage: 701 ms

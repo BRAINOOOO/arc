@@ -1,0 +1,6 @@
+vhdl work "ALU_control.vhd"
+vhdl work "the_prog_counter.vhd"
+vhdl work "the_registers.vhd"
+vhdl work "adder_4.vhd"
+vhdl work "the_and.vhd"
+vhdl work "the_control_unit.vhd"

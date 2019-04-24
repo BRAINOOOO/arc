@@ -1,0 +1,2 @@
+vhdl work "ALU_control.vhd"
+vhdl work "the_prog_counter.vhd"

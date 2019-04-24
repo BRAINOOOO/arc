@@ -1,0 +1,80 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    09:42:06 04/24/2019 
+-- Design Name: 
+-- Module Name:    ALU - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+----------------------- ENTITY --------------------------------------------
+entity ALU is
+	-- use a generic to generalize the number of inputs/output defined as standard like 1
+	generic (n_in_out: integer := 32 );
+
+	--port description
+	port (
+		a: in std_logic_vector(n_in_out-1 downto 0);
+		b: in std_logic_vector(n_in_out-1 downto 0);
+		ALUOp: in std_logic_vector(4-1 downto 0);
+		ALUResult: out std_logic_vector(n_in_out-1 downto 0);
+		zero: out std_logic
+	);
+end ALU;
+
+architecture arc_ALU of ALU is
+	--CONSTANTS OF OPERATIONS
+	constant ADD_op: std_logic_vector(4-1 downto 0):= "0001";
+	constant SUB_op: std_logic_vector(4-1 downto 0):= "0010";
+	constant AND_op: std_logic_vector(4-1 downto 0):= "0011";
+	constant OR_op: std_logic_vector(4-1 downto 0):= "0100";
+	constant NOR_op: std_logic_vector(4-1 downto 0):= "0101";
+	-- GENERAL CONSTANTS
+	constant CONST_ZERO: std_logic_vector(n_in_out-1 downto 0):= (others => '0');
+	
+	--SIGNALS
+	signal exit_operation : std_logic_vector(n_in_out-1 downto 0);
+
+begin
+	process
+	
+	begin
+		if(ALUOp = ADD_op) then
+			exit_operation <= a + b;
+		elsif(ALUOp = SUB_op) then
+			exit_operation <= a - b;
+		elsif(ALUOp = AND_op) then
+			exit_operation <= a AND b;
+		elsif(ALUOp = OR_op) then
+			exit_operation <= a OR b;
+		elsif(ALUOp = NOR_op) then
+			exit_operation <= a NOR b;
+		end if;
+
+		if( exit_operation = CONST_ZERO) then
+			zero <= '1';
+		else
+			zero <= '0';
+		end if;
+
+		ALUResult <= exit_operation;
+		wait for 1 ns;
+	end process;
+
+
+end arc_ALU;

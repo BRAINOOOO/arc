@@ -1,0 +1,17 @@
+ISim log file
+Running: D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\test_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/test_tb_isim_beh.wdb 
+ISim P.58f (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /test_tb/ADDER/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /test_tb/REGI/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /test_tb/REGI/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Finished circuit initialization process.
+ERROR: Index 32 out of bound 0 to 31. 
+ERROR: In process the_other_mem.vhd:84 
+ 
+INFO: Simulator is stopped.

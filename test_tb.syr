@@ -1,0 +1,203 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: test_tb.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "test_tb.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "test_tb"
+Output Format                      : NGC
+Target Device                      : xc7a200t-3-fbg484
+
+---- Source Options
+Top Module Name                    : test_tb
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\th_multiplexer.vhd" into library work
+Parsing entity <multiplexer>.
+Parsing architecture <arc_multiplexer> of entity <multiplexer>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_registers.vhd" into library work
+Parsing entity <registers>.
+Parsing architecture <arc_registers> of entity <registers>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_prog_counter.vhd" into library work
+Parsing entity <PC>.
+Parsing architecture <arc_PC> of entity <pc>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_other_mem.vhd" into library work
+Parsing entity <memory>.
+Parsing architecture <memory1> of entity <memory>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_mem_of_data.vhd" into library work
+Parsing entity <datamemory>.
+Parsing architecture <arc_datamemory> of entity <datamemory>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_control_unit.vhd" into library work
+Parsing entity <controller>.
+Parsing architecture <arc_controller> of entity <controller>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_and.vhd" into library work
+Parsing entity <and_port>.
+Parsing architecture <arc_and_port> of entity <and_port>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\t.vhd" into library work
+Parsing entity <signExtend>.
+Parsing architecture <arc_signExtend> of entity <signextend>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\g.vhd" into library work
+Parsing entity <shiftleftby2>.
+Parsing architecture <arc_shiftleftby2> of entity <shiftleftby2>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\ALU_control.vhd" into library work
+Parsing entity <ALUController>.
+Parsing architecture <arc_ALUController> of entity <alucontroller>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <arc_ALU> of entity <alu>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\adder_4.vhd" into library work
+Parsing entity <adder4>.
+Parsing architecture <arc_adder4> of entity <adder4>.
+Parsing VHDL file "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\yu.vhd" into library work
+Parsing entity <test_tb>.
+Parsing architecture <behavior> of entity <test_tb>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <test_tb> (architecture <behavior>) from library <work>.
+
+Elaborating entity <PC> (architecture <arc_PC>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_prog_counter.vhd" Line 45: address_in should be on the sensitivity list of the process
+
+Elaborating entity <memory> (architecture <memory1>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_other_mem.vhd" Line 88: memwrite should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_other_mem.vhd" Line 91: data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_other_mem.vhd" Line 92: memwrite should be on the sensitivity list of the process
+
+Elaborating entity <adder4> (architecture <arc_adder4>) with generics from library <work>.
+
+Elaborating entity <shiftleftby2> (architecture <arc_shiftleftby2>) with generics from library <work>.
+
+Elaborating entity <controller> (architecture <arc_controller>) from library <work>.
+ERROR:HDLCompiler:890 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_control_unit.vhd" Line 81: wait statement without UNTIL clause not supported for synthesis
+Netlist controller(arc_controller) remains a blackbox, due to errors in its contents
+
+Elaborating entity <multiplexer> (architecture <arc_multiplexer>) with generics from library <work>.
+
+Elaborating entity <signExtend> (architecture <arc_signExtend>) with generics from library <work>.
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\t.vhd" Line 56: toappend should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\t.vhd" Line 62: toappend should be on the sensitivity list of the process
+
+Elaborating entity <shiftleftby2> (architecture <arc_shiftleftby2>) with generics from library <work>.
+
+Elaborating entity <ALU> (architecture <arc_ALU>) with generics from library <work>.
+ERROR:HDLCompiler:890 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\ALU.vhd" Line 76: wait statement without UNTIL clause not supported for synthesis
+Netlist ALU(32)(arc_ALU) remains a blackbox, due to errors in its contents
+
+Elaborating entity <multiplexer> (architecture <arc_multiplexer>) with generics from library <work>.
+
+Elaborating entity <registers> (architecture <arc_registers>) from library <work>.
+
+Elaborating entity <ALUController> (architecture <arc_ALUController>) from library <work>.
+
+Elaborating entity <and_port> (architecture <arc_and_port>) from library <work>.
+
+Elaborating entity <datamemory> (architecture <arc_datamemory>) from library <work>.
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_mem_of_data.vhd" Line 89: memwrite should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_mem_of_data.vhd" Line 92: data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\the_mem_of_data.vhd" Line 93: memwrite should be on the sensitivity list of the process
+ERROR:HDLCompiler:890 - "D:\Users\AAST-7\Desktop\mariam\MIPS_Single_Cycle-master\Mariamsalahh\yu.vhd" Line 299: wait statement without UNTIL clause not supported for synthesis
+Netlist test_tb(behavior) remains a blackbox, due to errors in its contents
+--> 
+
+Total memory usage is 272668 kilobytes
+
+Number of errors   :    3 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

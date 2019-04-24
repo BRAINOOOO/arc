@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/ALU.xst" -ofn "D:/Users/AAST-7/Desktop/mariam/MIPS_Single_Cycle-master/Mariamsalahh/ALU.syr" 
