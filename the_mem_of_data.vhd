@@ -1,23 +1,7 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:52:22 04/24/2019 
--- Design Name: 
--- Module Name:    the_mem_of_data - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah project MIPS
+-- datameory.
 ----------------------------------------------------------------------------------
------------------------- LIBRERIE ---------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
@@ -86,10 +70,13 @@ X"00000000");
 		begin
 				if( address(0) /= '0' and address(0) /= '1')then
 					data_read <= CONST_ZERO;
+			
 				elsif(memRead = '1' AND memWrite = '1') then -- if both memREAD and memWRITE are ON, there is a problem, so I put 0 in OUTPUT
 					data_read <= CONST_ZERO; 
+			
 				elsif( memRead = '1') then	 --if I want to read data										
 					data_read <= data( conv_integer( unsigned( address ) )/4 );
+			
 				elsif (memWrite = '1') then -- if I want to write data					
 					data( conv_integer( unsigned( address ) )/4 )<= data_write;
 			
