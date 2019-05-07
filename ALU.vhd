@@ -13,6 +13,7 @@ use ieee.std_logic_unsigned.all;
 
 entity ALU is
 	-- use a generic to generalize the number of inputs/output defined as standard like 1
+	-- here i just set the n_in_out variable by default to be 32.
 	generic (n_in_out: integer := 32 );
 
 	--port description
