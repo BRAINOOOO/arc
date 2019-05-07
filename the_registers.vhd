@@ -1,21 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:48:30 04/24/2019 
--- Design Name: 
--- Module Name:    the_registers - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Mariamsalah MIPS project
+-- the registers.
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
@@ -87,7 +72,8 @@ X"00000000");
 
 	
 		data( conv_integer( unsigned( address_write_register ) ) ) <= data_to_write when (is_to_write = '1');
-		
+		data( conv_integer( unsigned( address_read_register2 ) ) ) <= data_to_write when (is_to_write = '0');
+                -- garabage neglect that.
 		--process (address_read_register1, address_read_register2, address_write_register, data_to_write, is_to_write) 
 		--begin
 			--if(is_to_write = '0') then --in reading
