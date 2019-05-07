@@ -1,23 +1,7 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:51:20 04/24/2019 
--- Design Name: 
--- Module Name:    the_control_unit - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah project MIPS processor
+-- the control unit.
 ----------------------------------------------------------------------------------
------------------------- LIBRERIE ---------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
@@ -37,16 +21,18 @@ entity controller is
 		ALUSrc: out std_logic; -- Select source (MUX) for ALU
 		RegWrite: out std_logic -- Write in Register
 	);
+	
 end controller;
 
 architecture arc_controller of controller is
 	
 	--CONSTANT
 
-	--TYPE OF OPERATION
+	--TYPE OF OPERATION....
+	
 	constant OP_JMP: std_logic_vector(5 downto 0):= "000010"; --JUMP
 
-	constant OP_ALU_OP: std_logic_vector(5 downto 0):= "000000"; -- ALU OPERATION, like ADD, DIVIDE...
+	constant OP_ALU_OP: std_logic_vector(5 downto 0):= "000000"; -- normal alu operation like add,divide,........
 
 	constant OP_BEQ: std_logic_vector(5 downto 0) :="000100"; -- BRANCH IF IS EQAUL
 
@@ -54,7 +40,7 @@ architecture arc_controller of controller is
 
 	constant OP_SW: std_logic_vector(5 downto 0) :="101011"; --STORE WORD from register to the specified location in memory
 
-	--VOCABULARY FOR ALUControl
+	--TERMS FOR ALUControl
 
 	constant ALU_NOOP: std_logic_vector(3 downto 0) :="0000"; --ALU NO OPERATION
 	
@@ -79,7 +65,9 @@ architecture arc_controller of controller is
 		
 		begin
 		wait for 1 ns;
-			if (Instruction = OP_JMP) then
+			if (Instruction = OP_JMP) 
+				then
+				
 				RegDest <= '0'; 
 				Jump <= '1';
 				Branch <= '0'; 
@@ -90,13 +78,14 @@ architecture arc_controller of controller is
 				ALUSrc <= '0'; 
 				RegWrite <= '0'; 
 				
-			elsif(Instruction = OP_ALU_OP) then
+			elsif(Instruction = OP_ALU_OP) 
+				then
 				RegDest <= '1'; 
 				Jump <= '0';
 				Branch <= '0'; 
 				MemRead <= '0'; 
 				MemtoReg <= '0'; 
-				ALUOp <= ALU_DK; -- say to alu "Hi I'm Riccardo and need YOU, but I don't know why!"
+				ALUOp <= ALU_DK; 
 				MemWrite <= '0'; 
 				ALUSrc <= '0'; 
 				wait for 3 ns;
@@ -107,7 +96,7 @@ architecture arc_controller of controller is
 				Branch <= '1'; 
 				MemRead <= '0'; 
 				MemtoReg <= '0'; 
-				ALUOp <= ALU_SUB; --say to alu "You have to compare (substract and if the result is 0, BRANCH)
+				ALUOp <= ALU_SUB; -- yu have to comprae if res is zero branch
 				MemWrite <= '0'; 
 				ALUSrc <= '0'; 
 				RegWrite <= '0'; 
