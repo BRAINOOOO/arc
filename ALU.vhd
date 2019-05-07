@@ -13,11 +13,14 @@ use ieee.std_logic_unsigned.all;
 
 entity ALU is
 	-- use a generic to generalize the number of inputs/output defined as standard like 1
-	-- here i just set the n_in_out variable by default to be 32.
+	-- here i defined n_in_out as generic bec it needs to be costomized and set a value to it by default 32.
+	
+	-- fe bug hna :( .
 	generic (n_in_out: integer := 32 );
 
-	--port description
-	port (
+	--the port description
+	port 
+	(
 		a: in std_logic_vector(n_in_out-1 downto 0);
 		b: in std_logic_vector(n_in_out-1 downto 0);
 		ALUOp: in std_logic_vector(4-1 downto 0);
@@ -28,6 +31,8 @@ end ALU;
 
 architecture arc_ALU of ALU is
 	--CONSTANTS OF OPERATIONS
+	-- i defined them as constant bec they aren't costomized.
+	
 	constant ADD_op: std_logic_vector(4-1 downto 0):= "0001";
 	constant SUB_op: std_logic_vector(4-1 downto 0):= "0010";
 	constant AND_op: std_logic_vector(4-1 downto 0):= "0011";
@@ -54,16 +59,12 @@ begin
 		elsif(ALUOp = NOR_op) then
 			exit_operation <= a NOR b;
 		end if;
-
-		if( exit_operation = CONST_ZERO) then
-			zero <= '1';
-		else
-			zero <= '0';
+                -- for zero flag 
+		if( exit_operation = CONST_ZERO) then zero <= '1'; else zero <= '0';
 		end if;
 
 		ALUResult <= exit_operation;
 		wait for 1 ns;
 	end process;
-
 
 end arc_ALU;
