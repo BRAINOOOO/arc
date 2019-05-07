@@ -1,21 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:56:41 04/24/2019 
--- Design Name: 
--- Module Name:    the_other_mem - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah project MIPS
+-- the other mem
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
