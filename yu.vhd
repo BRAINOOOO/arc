@@ -1,21 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    10:02:24 04/24/2019 
--- Design Name: 
--- Module Name:    yu - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah MIPS project
+-- finally test :)
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
