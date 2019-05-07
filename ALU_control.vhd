@@ -1,21 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:45:21 04/24/2019 
--- Design Name: 
--- Module Name:    ALU_control - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah project MIPS processor
+-- ALU control
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
@@ -26,64 +11,101 @@ entity ALUController is
 	port
 	(
 		Instruction: in std_logic_vector (5 downto 0); -- INSTRUCTION 
-		ALUOp: in std_logic_vector (3 downto 0); -- DEFINE THE OPERATION FOR THE ALU (4 bit for no implemented operation and extensibility)
-		ALUFunction: out std_logic_vector (3 downto 0) --DEFINE THE TYPE OF OPERATION TO DO FOR ALU
+		
+		
+		ALUOp: in std_logic_vector (3 downto 0); -- define the operation of the ALU here i asked
+		                                         -- the doctor that it can be 4 bits for extensibility.
+		
+		
+		ALUFunction: out std_logic_vector (3 downto 0) -- to define the type of the operation
 	);
 end ALUController;
 
 architecture arc_ALUController of ALUController is
 	
-	--CONSTANT
+	--some terms for alucontrol .
+	-- this a default case for no operation.
+	constant ALU_NOOP: std_logic_vector(3 downto 0) :="0000"; 
 
-	--VOCABULARY FOR ALUControl
 
-	constant ALU_NOOP: std_logic_vector(3 downto 0) :="0000"; --ALU NO OPERATION
-	
-	constant ALU_DK: std_logic_vector(3 downto 0) :="1111"; -- ALU doing something but DONT'T KNOW
-	
-	constant ALU_ADD: std_logic_vector(3 downto 0) :="0001"; -- ALU ADD
+	-- alu doing something but don't know it.
+	constant ALU_DK: std_logic_vector(3 downto 0) :="1111"; 
 
-	constant ALU_SUB: std_logic_vector(3 downto 0) :="0010"; --ALU SUBTRACT 
 
-	constant ALU_AND: std_logic_vector(3 downto 0):= "0011"; -- ALU AND
+	-- alu for add
+	constant ALU_ADD: std_logic_vector(3 downto 0) :="0001"; 
 
-	constant ALU_OR: std_logic_vector(3 downto 0):= "0100"; -- ALU OR
 
-	constant ALU_NOR: std_logic_vector(3 downto 0):= "0101"; -- ALU NOR
+        -- alu for subtract
+	constant ALU_SUB: std_logic_vector(3 downto 0) :="0010"; 
 
-	--FUNCTIONS
-	constant FUNC_ADD: std_logic_vector(5 downto 0):= "100000"; -- ADD FUNCTION
 
-	constant FUNC_SUB: std_logic_vector(5 downto 0):= "100010"; -- SUB FUNCTION
+        -- alu for and
+	constant ALU_AND: std_logic_vector(3 downto 0):= "0011";
 
-	constant FUNC_AND: std_logic_vector(5 downto 0):= "100100"; -- AND FUNCTION
 
-	constant FUNC_OR: std_logic_vector(5 downto 0):= "100101"; -- OR FUNCTION
+        -- alu for or
+	constant ALU_OR: std_logic_vector(3 downto 0):= "0100"; 
 
+
+        -- alu for nor
+	constant ALU_NOR: std_logic_vector(3 downto 0):= "0101"; 
+
+	--here the functions :)
+
+        -- add fun
+	constant FUNC_ADD: std_logic_vector(5 downto 0):= "100000"; 
+        
+        -- sub fun
+	constant FUNC_SUB: std_logic_vector(5 downto 0):= "100010"; 
+
+        -- and fun
+	constant FUNC_AND: std_logic_vector(5 downto 0):= "100100"; 
+
+        -- or fun
+	constant FUNC_OR: std_logic_vector(5 downto 0):= "100101"; 
+
+        -- for nor but i removed it
 	--constant FUNC_NOR: std_logic_vector(5 downto 0):= "100010"; -- NOR FUNCTION
 
 
 
-	--GENERAL CONSTANTS
+	--some gen contants
 	constant CONST_ZERO: std_logic_vector(31 downto 0):= (others => '0');
-	
-	
 	begin
 		process (Instruction, ALUOp) 
 		begin
-			if (ALUOp = ALU_DK and Instruction = FUNC_ADD) then
+			
+			
+			-- here what i am doing is dealing with some possible error 
+			-- and after that i assign the default values.
+			
+			
+			if (ALUOp = ALU_DK and Instruction = FUNC_ADD) 
+				then
 				ALUFunction <= ALU_ADD;
-			elsif (ALUOp = ALU_DK and Instruction = FUNC_SUB) then
+			
+			elsif (ALUOp = ALU_DK and Instruction = FUNC_SUB) 
+				then
 				ALUFunction <= ALU_SUB;
-			elsif (ALUOp = ALU_DK and Instruction = FUNC_AND) then
+			
+			elsif (ALUOp = ALU_DK and Instruction = FUNC_AND) 
+				then
 				ALUFunction <= ALU_AND;
-			elsif (ALUOp = ALU_DK and Instruction = FUNC_OR) then
+			
+			elsif (ALUOp = ALU_DK and Instruction = FUNC_OR) 
+				then
 				ALUFunction <= ALU_OR;
-			elsif (ALUOp = ALU_DK ) then
-				ALUFunction <= ALU_NOOP; --possibile errors (not implemented or something like that)
+			
+			elsif (ALUOp = ALU_DK ) 
+				then
+				ALUFunction <= ALU_NOOP; --here for the possibile errors .
 			else
 				ALUFunction <= ALUOp;
+			
+			
 			end if;
+				
 		end process;
 	
 end arc_ALUController;
