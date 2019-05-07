@@ -8,6 +8,9 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 ----------------------- ENTITY --------------------------------------------
+-- here there was a bug.
+
+
 entity ALU is
 	-- use a generic to generalize the number of inputs/output defined as standard like 1
 	generic (n_in_out: integer := 32 );
