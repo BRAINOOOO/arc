@@ -1,21 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    09:47:26 04/24/2019 
--- Design Name: 
--- Module Name:    the_prog_counter - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- MariamSalah MIPS processor.
+-- pc of program.
 ------------------------ LIBRERIE ---------------------------------------
 library ieee;
 use ieee.std_logic_1164.all; 
